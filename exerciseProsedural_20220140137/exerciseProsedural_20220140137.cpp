@@ -66,5 +66,17 @@ string status_Kelulusan(double nil1[], double nil2[]) {
 }
 int main()
 {
-
+	input_string();
+	input_double("Matematika", NilaiMTK);
+	input_double("Bahasa Inggris", NilaiBhsInggris);
+	rerata(NilaiBhsInggris, NilaiMTK);
+	cout << endl;
+	cout << "=====================" << endl;
+	cout << "Status kelulusan" << endl;
+	cout << "=====================" << endl;
+	cout << "Nama \t\t\t\t\t\t\t\t Status" << endl;
+	for (int i = 0; i < jumlahNama; i++) 
+	{
+		cout << kadidat[i] << "\t\t\t\t\t\t\t\t" << status_Kelulusan(NilaiBhsInggris, NilaiMTK) << endl;
+	} 
 }
