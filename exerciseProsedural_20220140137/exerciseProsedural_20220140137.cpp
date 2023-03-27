@@ -48,6 +48,22 @@ void input_double(string mapel, double nilai[])
 	}
 }
 
+double rerata(double a[], double b[]) {
+	for (int i = 0; i < jumlahNama; i++) 
+	{
+		return (a[i] + b[i]) / 2;
+	}
+}
+
+string status_Kelulusan(double nil1[], double nil2[]) {
+	for (int i = 0; i < jumlahNama; i++) 
+	{
+		if (((nil1[i] + nil2[i]) / 2) >= 70 || nil2[i] > 80)
+			return "Lulus";
+		else
+			return "Gagal";
+	}
+}
 int main()
 {
 
