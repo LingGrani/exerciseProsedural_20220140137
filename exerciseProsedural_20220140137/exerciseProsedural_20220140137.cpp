@@ -6,6 +6,7 @@ int jumlahNama;
 double NilaiMTK[20];
 double NilaiBhsInggris[20];
 double Nilairata[20];
+string kelulusan[20];
 void input_string()
 {  //prosedure input
 	while (true)
@@ -55,13 +56,14 @@ double rerata(double a[], double b[]) {
 	}
 }
 
-string status_Kelulusan(double nil1[], double nil2[]) {
+string status_Kelulusan() 
+{
 	for (int i = 0; i < jumlahNama; i++) 
 	{
-		if (((nil1[i] + nil2[i]) / 2) >= 70 || nil2[i] > 80)
-			return "Lulus";
+		if (((NilaiBhsInggris[i] + NilaiMTK[i]) / 2) >= 70 || NilaiMTK[i] > 80)
+			return kelulusan[i] = "Lulus";
 		else
-			return "Gagal";
+			return kelulusan[i] = "Gagal";
 	}
 }
 int main()
@@ -70,6 +72,7 @@ int main()
 	input_double("Matematika", NilaiMTK);
 	input_double("Bahasa Inggris", NilaiBhsInggris);
 	rerata(NilaiBhsInggris, NilaiMTK);
+	status_Kelulusan();
 	cout << endl;
 	cout << "=====================" << endl;
 	cout << "Status kelulusan" << endl;
@@ -77,6 +80,6 @@ int main()
 	cout << "Nama \t\t\t\t\t\t\t\t Status" << endl;
 	for (int i = 0; i < jumlahNama; i++) 
 	{
-		cout << kadidat[i] << "\t\t\t\t\t\t\t\t" << status_Kelulusan(NilaiBhsInggris, NilaiMTK) << endl;
+		cout << kadidat[i] << "\t\t\t\t\t\t\t\t" << kelulusan[i] << endl;
 	} 
 }
