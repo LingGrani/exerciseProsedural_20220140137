@@ -44,7 +44,7 @@ void input_double(string mapel, double nilai[])
 
 	for (int i = 0; i < jumlahNama; i++)
 	{
-		cout << "nilai " << mapel << " " << kadidat[i] << (i + 1) << ": ";
+		cout << "nilai " << mapel << " " << kadidat[i] << ": ";
 		cin >> nilai[i];
 	}
 }
@@ -55,15 +55,14 @@ double rerata(double a[], double b[]) {
 		return (a[i] + b[i]) / 2;
 	}
 }
-
 string status_Kelulusan() 
 {
 	for (int i = 0; i < jumlahNama; i++) 
 	{
 		if (((NilaiBhsInggris[i] + NilaiMTK[i]) / 2) >= 70 || NilaiMTK[i] > 80)
-			return kelulusan[i] = "Lulus";
+			return "Lulus";
 		else
-			return kelulusan[i] = "Gagal";
+			return "Gagal";
 	}
 }
 int main()
@@ -72,7 +71,6 @@ int main()
 	input_double("Matematika", NilaiMTK);
 	input_double("Bahasa Inggris", NilaiBhsInggris);
 	rerata(NilaiBhsInggris, NilaiMTK);
-	status_Kelulusan();
 	cout << endl;
 	cout << "=====================" << endl;
 	cout << "Status kelulusan" << endl;
@@ -80,6 +78,6 @@ int main()
 	cout << "Nama \t\t\t\t\t\t\t\t Status" << endl;
 	for (int i = 0; i < jumlahNama; i++) 
 	{
-		cout << kadidat[i] << "\t\t\t\t\t\t\t\t" << kelulusan[i] << endl;
+		cout << kadidat[i] << "\t\t\t\t\t\t\t\t" << status_Kelulusan() << endl;
 	} 
 }
